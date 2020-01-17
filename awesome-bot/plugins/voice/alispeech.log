@@ -1,0 +1,10 @@
+2019-10-27 20:42:20,675 alispeech-WARNING  _on_error:123 retry start: sequence item 1: expected str instance, bytes found
+2019-10-27 20:42:31,148 alispeech-WARNING  _on_error:123 retry start: sequence item 1: expected str instance, bytes found
+2019-10-27 20:42:41,947 alispeech-ERROR  _on_error:115 sequence item 1: expected str instance, bytes found
+2019-10-27 20:42:41,950 alispeech-ERROR  start:156 start failed, status: 6
+2019-10-27 20:44:06,148 alispeech-WARNING  _on_error:123 retry start: sequence item 1: expected str instance, bytes found
+2019-10-27 20:44:16,618 alispeech-WARNING  _on_error:123 retry start: sequence item 1: expected str instance, bytes found
+2019-10-27 20:44:27,418 alispeech-ERROR  _on_error:115 sequence item 1: expected str instance, bytes found
+2019-10-27 20:44:27,423 alispeech-ERROR  start:156 start failed, status: 6
+2019-10-27 20:45:24,622 alispeech-INFO  _on_open:86 sending start cmd: {"header": {"namespace": "SpeechSynthesizer", "appkey": "Fx9voCGViOO6mKJj", "name": "StartSynthesis", "message_id": "a539893ef8b711e99e0b1831bf70beba", "task_id": "a539893ff8b711e9a5311831bf70beba"}, "context": {"sdk": {"name": "nls-sdk-python", "version": "2.0.1"}}, "payload": {"voice": "xiaoyun", "format": "wav", "sample_rate": 16000, "text": "\u4eca\u5929\u662f\u5468\u4e00\uff0c\u5929\u6c14\u633a\u597d\u7684\u3002", "volume": 50, "speech_rate": 0, "pitch_rate": 0}}
+2019-10-27 21:52:20,368 alispeech-INFO  _on_open:86 sending start cmd: {"header": {"namespace": "SpeechSynthesizer", "appkey": "Fx9voCGViOO6mKJj", "name": "StartSynthesis", "message_id": "fecbc99ef8c011e990111831bf70beba", "task_id": "fecbc99ff8c011e9b3a31831bf70beba"}, "context": {"sdk": {"name": "nls-sdk-python", "version": "2.0.1"}}, "payload": {"voice": "xiaoyun", "format": "wav", "sample_rate": 16000, "text": "\u4eca\u5929\u662f\u5468\u4e00\uff0c\u5929\u6c14\u633a\u597d\u7684\u3002", "volume": 50, "speech_rate": 0, "pitch_rate": 0}}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b32ef580-bced-42c4-9361-f9345ebe3766" name="test" url="http://192.168.123.65">
+        <fileTransfer host="192.168.123.65" port="22" rootFolder="/var/lib/docker/overlay2/391ca6e62989e61a4476ad8c75ccc322094b8569abf2d41e53d499f8f6796359/diff" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
