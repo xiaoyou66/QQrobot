@@ -1,4 +1,4 @@
-# 小白机器人
+# 机器人小白
 
 > 一款基于酷Q机器人和CoolQ HTTP API 插件以及nonebot框架的QQ机器人
 
@@ -37,15 +37,15 @@ pip install ConfigParser
 
 数据库sql文件就是**robot.sql**文件，自己导入后可以修改项目的配置文件
 
-![](\back\1.png)
+![](back\1.png)
 
 ### 配置阿里云key和小i机器人appkey
 
-![](\back\2.png)
+![](back\2.png)
 
-![](\back\3.png)
+![](back\3.png)
 
-![](\back\4.png)
+![](back\4.png)
 
 ### 运行项目
 
@@ -75,7 +75,7 @@ pip install ConfigParser
 
 只需要打赏**一块钱以上**就可以获得完整的额外服务，打赏好后只需要把截图发给我（QQ:1487998424）。然后我就会给你下载链接。还希望大家多打赏一点，以后我就可能会有多点精力去完善这个项目。
 
-![](\back\5.png)
+![](back\5.png)
 
 
 
