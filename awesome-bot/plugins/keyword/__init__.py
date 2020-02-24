@@ -47,7 +47,7 @@ async def _(session: CommandSession):
                     else:
                         key=stripped_arg[5:]
                         if key:
-                            sql = "SELECT thekey,replay FROM cKeyword WHERE thekey LIKE'%"+key+"%'"
+                            sql = "SELECT thekey,replay FROM ckeyword WHERE thekey LIKE'%"+key+"%'"
                             result=sql_dql(sql)
                             if result:
                                 senddata=""
@@ -98,14 +98,14 @@ async def _(session: CommandSession):
                         result=sql_dql(sql)
                         if result:
                             result=result[0][0].split("-")
-                            sql="SELECT replay FROM cKeyword WHERE thekey='"+result[0]+"'"
+                            sql="SELECT replay FROM ckeyword WHERE thekey='"+result[0]+"'"
                             qdata=sql_dql(sql)
                             if qdata:
                                 replay=qdata[0][0].replace(result[1]+"@@","")
                                 if replay.strip():
-                                    sql="UPDATE cKeyword SET replay='"+replay+"' WHERE thekey='"+result[0]+"'"
+                                    sql="UPDATE ckeyword SET replay='"+replay+"' WHERE thekey='"+result[0]+"'"
                                 else:
-                                    sql="DELETE FROM cKeyword WHERE thekey='"+result[0]+"'"
+                                    sql="DELETE FROM ckeyword WHERE thekey='"+result[0]+"'"
                                 if sql_dml(sql):
                                     await session.send("[CQ:at,qq=" + str(QQ) + "]已删除回复:"+result[1])
                                 else:
@@ -163,7 +163,7 @@ async def _(session: CommandSession):
                     result=result[0][0].split("-")
                     result=result[int(stripped_arg)]
                     # 删除关键词
-                    sql="DELETE FROM cKeyword WHERE thekey='"+result+"'"
+                    sql="DELETE FROM ckeyword WHERE thekey='"+result+"'"
                     if sql_dml(sql):
                         await session.send("[CQ:at,qq=" + str(QQ) + "]成功删除关键词:"+result)
                     else:
@@ -214,13 +214,13 @@ def addreplay(content):
     if len(data)==3:
         weight=data[2]
     # 先找找关键词是否存在
-    sql = "SELECT thekey,replay FROM cKeyword WHERE thekey='" + data[0] + "'"
+    sql = "SELECT thekey,replay FROM ckeyword WHERE thekey='" + data[0] + "'"
     dta = sql_dql(sql)
     if dta:
         # 关键词存在
-        sql = "UPDATE cKeyword SET replay='" + dta[0][1] + data[1] + "@@',weight="+str(weight)+" WHERE thekey='" + data[0] + "'"
+        sql = "UPDATE ckeyword SET replay='" + dta[0][1] + data[1] + "@@',weight="+str(weight)+" WHERE thekey='" + data[0] + "'"
     else:
-        sql = "INSERT INTO cKeyword (thekey,replay,weight) VALUES ('" + data[0] + "','" + data[1] + "@@',"+str(weight)+")"
+        sql = "INSERT INTO ckeyword (thekey,replay,weight) VALUES ('" + data[0] + "','" + data[1] + "@@',"+str(weight)+")"
     return sql_dml(sql)
 
 
@@ -248,7 +248,7 @@ async def _(session: NLPSession):
     QQ = session.ctx['user_id']
     message = session.msg.strip()
     # 先把所有的数据都读出来
-    sql = "SELECT thekey,replay,reWeight,weight FROM cKeyword WHERE '" + message + "' LIKE CONCAT('%',thekey,'%')"
+    sql = "SELECT thekey,replay,reWeight,weight FROM ckeyword WHERE '" + message + "' LIKE CONCAT('%',thekey,'%')"
     result = sql_dql(sql)
     #这里是优先级的设置
     priority=70

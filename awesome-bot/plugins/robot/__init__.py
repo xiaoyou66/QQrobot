@@ -5,6 +5,7 @@ from aiocqhttp.message import escape
 
 import re,configparser
 import MySQLdb
+from .robot import xiaoiback
 from .robot import xiaoi_bot
 from ..keyword import addreplay,download
 
@@ -99,6 +100,11 @@ async def call_tuling_api(session: CommandSession, text: str) -> Optional[str]:
         bot = xiaoi_bot(data["key"],data['secret'] )
         data = bot.GetResponse(text, "123")
         data = re.sub(r'\[.*?\]', "", data)
+
+        # 如果你的小i机器人秘钥没用，可以试一下下面这个
+
+        # data=xiaoiback(text)
+        # print(data)
         # 这里把换替换
         if(data.strip()=="默认回复" or data.strip()=="主人还没有给我设置这类话题的回复，你帮我悄悄的告诉他吧！"):
             return None

@@ -25,6 +25,18 @@ def tulin(text):
     content=json.loads(response)
     return content['showapi_res_body']['text']
 
+
+#小i机器人备用
+def xiaoiback(text):
+    url="http://5555.ibot.xiaoi.com/ibot-xiaoi-web/api/robot?&userId=yuijmloww478r&platform=web&question="+text
+    content=requests.get(url).text
+    content=re.search('content":"(.*?)"',content).group(1)
+    content=re.sub(r'\[.*?\]', "",content)
+    content=content.replace("</br>","\n",-1)
+    content=content.replace("<br>","\n",-1)
+    return content
+
+
 #小i机器人相关
 class xiaoi_bot(object):
     def __init__(self, appKey, appSecret):
