@@ -22,7 +22,7 @@ pip install wordcloud
 #安装Crypto用于AES加密
 pip install pycryptodome
 #安装aioqthttp
-pip install aiocqhttp
+pip install aiocqhttp==0.6.8
 #安装阿里云的语音合成SDK(这里参考官方网站)
 https://help.aliyun.com/document_detail/120699.html?spm=a2c4g.11174283.6.597.41f97275Vv40BC
 #安装阿里云SDK
